@@ -1,0 +1,118 @@
+mony/
+│── index.html
+│── style.css
+│── app.js
+│── vercel.json
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mony - منصة مالية آمنة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>مرحبًا بك في mony</h1>
+    <div class="language-switcher">
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="ar">عربى</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section class="balance">
+      <h2>إجمالي الرصيد: <span id="totalBalance">0 USDT</span></h2>
+      <h3>مبلغ إعادة الشحن: <span id="rechargeAmount">0 USDT</span></h3>
+      <h3>المكافآت: <span id="bonusAmount">0 USDT</span></h3>
+    </section>
+
+    <section class="actions">
+      <button onclick="recharge()">تعبئة رصيد</button>
+      <button onclick="withdraw()">سحب</button>
+      <button onclick="showRecords()">السجلات المالية</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>الدعم عبر تلغرام: <a href="https://t.me/monyhr99335">@monyhr99335</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+      </html>
+   body {
+  font-family: "Tahoma", sans-serif;
+  direction: rtl;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-switcher select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+main {
+  padding: 20px;
+}
+
+.balance h2, .balance h3 {
+  margin: 10px 0;
+}
+
+.actions button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #0056b3;
+}
+
+footer {
+  background: #eee;
+  padding: 10px;
+  text-align: center;
+}
+function changeLanguage() {
+  let lang = document.getElementById("languageSelect").value;
+  alert("تم اختيار اللغة: " + lang);
+  // هنا تضيفي كود تحميل النصوص من ملف JSON لكل لغة
+}
+
+function recharge() {
+  alert("ميزة تعبئة الرصيد قيد التطوير.");
+}
+
+function withdraw() {
+  alert("ميزة السحب قيد التطوير.");
+}
+
+function showRecords() {
+  alert("عرض السجلات المالية قريبًا.");
+}
+{
+  "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" }
+  ]
+}
